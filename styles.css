@@ -61,6 +61,7 @@ html {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 64px 0 64px;
     background-color: white;
     border-color: rgb(209, 209, 209);
@@ -162,15 +163,20 @@ main {
 .project-card-container li {
     flex: 1 0 420px;
     max-width: 600px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-project {
+    display: flex;
 }
 
 .card-project a {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    height: 100%;
     /* width: 100%; */
-    
     /* border: 1px solid rgb(176, 176, 176);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-radius: 8px; */
