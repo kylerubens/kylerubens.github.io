@@ -58,21 +58,19 @@ html {
 
 /* Nav */ 
 
-nav {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 64px 0 64px;
+    padding: 0 64px;
     background-color: white;
     border-color: rgb(209, 209, 209);
     border-style: solid;
     border-width: 0 0 2px 0;
     position: sticky;
-    height: 64px;
+    /* height: 64px; */
     top: 0;
     z-index: 1000;
-
-
 }
 
 .navbar a {
@@ -82,24 +80,31 @@ nav {
 
 .logo {
     font-family: "Darker Grotesque", sans-serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     padding-bottom: 6px;
+    height: 64px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.nav-links li {
+.nav-links a {
+    display: block;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    padding: 8px 16px;
+    padding: 12px 24px;
     border-radius: 12px;
 }
 
-.nav-links li:hover {
+.nav-links a:hover {
     background-color: rgb(235, 235, 235);
     /* font-weight: bold; */
     transition: all 0.2s ease-in;
@@ -107,13 +112,29 @@ nav {
 
 .nav-links .primary-nav-button {
     background-color: #4E61B7;
-    padding: 8px 24px;
+    /* padding: 12px 32px; */
     color: white;
 }
 
 .nav-links .primary-nav-button:hover {
     background-color: #404f94;
     transition: all 0.2s ease-in;
+}
+
+/* Hide hamburger by default */
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
 }
 
 /* Body */
@@ -200,7 +221,7 @@ main {
     height: calc(100vh / 2);
 }
 
-/* project page */
+/* Project & Resume Pages */
 
 .notion-preview {
     position: absolute;
@@ -208,10 +229,9 @@ main {
     top: 64px;
 }
 
-.resume-preview {
+#resume-preview-id {
     position: absolute;
     height: calc(100vh - 64px);
-    top: 64px;
 }
 
 body {
@@ -222,12 +242,14 @@ body {
 
 #contact-containers {
     display: flex;
+    flex-wrap: wrap;
     gap: 64px;
 }
 
 .contact-box {
     display: flex;
     flex-direction: column;
+    flex: 1 1 300px;
     gap: 8px;
     width: 100%;
     border: 1px solid rgb(176, 176, 176);
@@ -255,11 +277,59 @@ body {
     .navbar {
         padding: 0 16px;
     }
+    #contact-containers {
+        gap: 32px;
+    }
 }
 
 /* Hide buttons on mobile */
 @media(max-width: 700px){
-    .nav-links li {
-        display: none;
+    /* show hamburger */
+    .toggle-button {
+        display: flex;
     }
+    
+    /* hide links by default.*/
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 16px 16px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* .nav-links li {
+        text-align: center;
+        height: 48px;
+    } */
+
+    /* toggled by JS */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .navbar.active {
+        height: 100vh;
+        align-content: flex-start;
+    }
+
+    /* .resume-preview.active {
+        display: none;
+    } */
+
 }

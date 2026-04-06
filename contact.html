@@ -13,14 +13,21 @@
 
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar-id">
             <div class="logo">
                 <a href="index.html">Kyle Rubens Design</a>
             </div>
-            <ul class="nav-links">
+
+            <a href="#" class="toggle-button" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="index.html#project-list">Projects</a></li>
                 <li><a href="resume.html">Resume</a></li>
-                <li class="primary-nav-button"><a href="contact.html">Contact</a></li>
+                <li><a class="primary-nav-button" href="contact.html">Contact</a></li>
             </ul>
     </nav>
     <div class="outer-container">
@@ -47,4 +54,5 @@
         </main>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
