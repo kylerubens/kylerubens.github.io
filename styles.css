@@ -307,6 +307,11 @@ section {
     color: #0313c5;
 }
 
+/* Keep button from changing color */
+#bio-text .button-small:link {
+    color: inherit;
+}
+
 #placeholder {
     height: calc(100vh / 2);
 }
