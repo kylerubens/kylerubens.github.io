@@ -184,16 +184,40 @@ body {
 
 main {
     display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding: 96px 0 64px 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 48px;
+    padding: 16px 0 64px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    line-height: 64px;
 }
 
 .main-subtitle {
     font-weight: normal;
     font-size: 21px;
     line-height: 38px;
-    max-width: 600px;
+}
+
+#hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    flex: 1 1 400px;
+    padding: 0 0 32px 0;
+}
+
+#hero-image-div {
+    display: flex;
+    flex: 1 0 380px;
+    max-width: 640px;
+}
+
+#hero-image {
+    object-fit: contain;
 }
 
 /* Home - Projects */
@@ -395,6 +419,19 @@ body {
     }
 }
 
+/*  Temporary fix for main page hero section spacing. CHANGE WRAP BEHAVIOR TO SWITCH TO COLUMN USING MAX WIDTH LATER! */
+@media(max-width: 875px) {
+        /* Adjust spacing for index hero section */
+    #hero-text {
+        padding: 0;
+    }
+
+    main {
+        padding-top: 64px;
+    }
+}
+
+
 /* Hide buttons on mobile */
 @media(max-width: 700px){
     /* show hamburger */
@@ -462,5 +499,8 @@ body {
     .contact-box {
         flex: 0 0 100%;
     }
+
+
+
 
 }
