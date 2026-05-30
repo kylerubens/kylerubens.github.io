@@ -17,6 +17,7 @@
 /* Preset Attributes for Fonts and Elements */
 html {
     scroll-padding-top: 64px;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,22 +65,48 @@ img {
     border-radius: 8px;
 }
 
-
-/* Components */
-.button-small {
+.button-hero {
+    display: flex;
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 16px;
     padding: 12px 16px;
-    border-radius: 12px;
+    border-radius: 10px;
+    border: 1px solid #b0b0b0;
+    text-decoration: none;
+    /* color: inherit; */
+    text-align: center;
+    align-self: flex-start;
+    /* color: black; */
+
+    background-color: rgb(34, 34, 75); 
+    color: white; 
+    z-index: 1;
+}
+
+.button-hero:hover {
+    background-color: rgb(54, 54, 118);
+    transition: all 0.2s ease-in;
+}
+
+/* Components */
+.button-regular {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
     border: 1px solid #b0b0b0;
     text-decoration: none;
     color: inherit;
     text-align: center;
+    align-self: flex-start;
+    color: black;
 }
 
-.button-small:hover {
-    background-color:#e3e3e3;
+.button-regular:hover {
+    background-color: rgba(0, 6, 83, 0.055);
     transition: all 0.2s ease-in;
 }
 
@@ -126,14 +153,14 @@ img {
 .nav-links a {
     display: block;
     font-family: "Inter", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     padding: 12px 24px;
     border-radius: 12px;
 }
 
 .nav-links a:hover {
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(0, 6, 83, 0.055);
     /* font-weight: bold; */
     transition: all 0.2s ease-in;
 }
@@ -157,6 +184,7 @@ img {
   width: 52px;
   height: 50px;
   padding: 16px 12px;
+  cursor: pointer;
 }
 
 .toggle-button .bar {
@@ -168,11 +196,10 @@ img {
 
 /* Body */
 
-/*
+
 body {
-    display: flex;
-    flex-direction: column;
-} */
+    background-color: #edf5f8;
+}
 
 .outer-container {
     max-width: 1200px;
@@ -182,14 +209,19 @@ body {
 
 /* Main */
 
-main {
+.main-index {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: row;
-    gap: 48px;
-    padding: 16px 0 64px 0;
+    gap: 60px;
+    margin: 32px 0;
+    padding: 16px 64px;
+    border-radius: 24px;
     align-items: center;
     justify-content: center;
+    background-color: #bfe0fc;
+    color: #011842;
+    overflow: hidden;
 }
 
 .main-contact {
@@ -197,12 +229,11 @@ main {
     flex-direction: column;
     gap: 32px;
     padding: 96px 0 64px 0;
-    align-items:baseline;
-    justify-content: baseline;
 }
 
 .main-title {
     line-height: 64px;
+    font-weight: 800;
 }
 
 .main-subtitle {
@@ -215,18 +246,29 @@ main {
     display: flex;
     flex-direction: column;
     gap: 36px;
-    flex: 1 1 400px;
-    padding: 0 0 32px 0;
+    flex: 2 1 0;
+    padding: 5% 0 5% 0;
 }
 
 #hero-image-div {
     display: flex;
-    flex: 1 0 380px;
-    max-width: 640px;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    max-width: 340px;
 }
 
 #hero-image {
-    object-fit: contain;
+    width: 150%;
+    /* max-width: 600px; */
+    /* object-fit: contain; */
+    margin: -15% -25%;
+    transition: all 0.05s ease-in;
+}
+
+#hero-image:hover {
+    /* width: 158%; */
+    transform: rotate(2deg);
 }
 
 /* Home - Projects */
@@ -270,7 +312,7 @@ section {
 }
 
 .card-project:hover {
-    background-color: rgb(238, 238, 243);
+    background-color: rgba(0, 17, 43, 0.048);
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     transition: all 0.2s ease-in;
 }
@@ -341,7 +383,7 @@ section {
 }
 
 /* Keep button from changing color */
-#bio-text .button-small:link {
+#bio-text .button-regular:link {
     color: inherit;
 }
 
@@ -387,6 +429,7 @@ body {
     padding: 24px 32px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     max-width: 420px;
+    background-color: white;
 }
 
 .contact-box:hover {
@@ -427,19 +470,6 @@ body {
         flex: 0 0 calc((100% - 40px) / 2);
     }
 }
-
-/*  Temporary fix for main page hero section spacing. CHANGE WRAP BEHAVIOR TO SWITCH TO COLUMN USING MAX WIDTH LATER! */
-@media(max-width: 875px) {
-        /* Adjust spacing for index hero section */
-    #hero-text {
-        padding: 0;
-    }
-
-    main {
-        padding-top: 64px;
-    }
-}
-
 
 /* Hide buttons on mobile */
 @media(max-width: 700px){
@@ -495,6 +525,17 @@ body {
     /* .resume-preview.active {
         display: none;
     } */
+
+    /* Change home hero to column */
+    .main-index {
+        flex-direction: column;
+        gap: 0px;
+        padding: 32px;
+    }
+
+    .main-title {
+        font-size: 50px;
+    }
 
     #bio-text {
         flex: auto;
