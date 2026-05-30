@@ -20,16 +20,26 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Removes blue square for touch */
-button:focus {
-  outline: none; 
+/* Remove blue squares for touch screens */
+button, 
+a, 
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  
+  /* Backup */
+  /* outline: none;  */
 }
 
+/* Removes blue square for touch */
+/* button:focus {
+  outline: none; 
+} */
+
 /* Re-add blue square when using a keyboard */
-button:focus-visible {
+/* button:focus-visible {
   outline: 2px solid #007bff; 
   outline-offset: 2px;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Darker Grotesque", sans-serif;
