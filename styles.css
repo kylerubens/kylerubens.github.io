@@ -166,6 +166,7 @@ img {
     height: 64px;
     display: flex;
     align-items: center;
+    color: #011842;
 }
 
 .nav-links {
@@ -379,44 +380,51 @@ section {
 
 /* Home - About Me*/
 
-#bio-container {
+.two-column-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 96px;
-    max-width: 800px;
+    gap: 120px;
+    /* max-width: 1000px; */
     margin: auto;
-    padding: 32px 0;
+    padding: 32px 32px;
 }
 
-#bio-text {
+.two-column-text {
     display: flex;
     flex-direction: column;
-    flex: 0 1 360px;
+    flex: 1 1 400px;
     gap: 32px;
+    justify-content: center;
 }
 
-#bio-text p {
+.two-column-text p {
     font-size: 16px;
+    line-height: 27px;
 }
 
-#bio-images {
+.two-column-images {
     display: flex;
     flex-direction: column;
-    flex: 1 1 260px;
+    flex: 1 1 400px;
     gap: 32px;
+    align-items: center;
 }
 
-#bio-text a {
+.two-column-images img {
+    max-width: 600px;
+}
+
+.two-column-text a {
     text-decoration: none;
     /* color: rgb(82, 0, 188); */
 }
 
-#bio-text a:link {
+.two-column-text a:link {
     color: #0313c5;
 }
 
 /* Keep button from changing color */
-#bio-text .button-regular:link {
+.two-column-text .button-regular:link {
     color: inherit;
 }
 
