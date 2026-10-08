@@ -68,6 +68,8 @@ h1 {
 h2 {
     font-size: 32px;
     font-weight: 700;
+    /* Revise this alignment adjustment later!! Just a quick fix! */
+    padding-left: 16px;
 }
 
 h3 {
