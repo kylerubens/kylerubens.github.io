@@ -69,7 +69,12 @@ h2 {
     font-size: 32px;
     font-weight: 700;
     /* Revise this alignment adjustment later!! Just a quick fix! */
-    padding-left: 16px;
+    padding: 0 16px;
+}
+
+hr {
+    /* Revise this alignemnt later!! Just a quick fix! */
+    padding: 0 16px;
 }
 
 h3 {
@@ -592,8 +597,5 @@ body {
     .contact-box {
         flex: 0 0 100%;
     }
-
-
-
 
 }
